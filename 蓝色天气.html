@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>woc</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <style>
+    .row{
+      text-align:left!important;
+      margin: 2px;
+    }
+    div{
+     left:0;
+        right:0;
+    margin:0 auto;
+}
+    </style>
+</head>
+
+<body>
+    <!--搜索行-->
+    <div style=" margin: 0,auto; background-color: #F0FFFF">
+    <p  style="width: 94%; margin: 0;"><span style="margin-left: 6%;" class="pt-2 display-5"> 天天天气 </span>  
+        <span style="float: right; display: inline;" class="pt-3">
+        <input type="text" name="" id="input" class="rounded  "  placeholder="输入城市名称" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);">
+        <button class="rounded  btn-secondary">查询</button>
+        </span>
+    </p>
+    </div>
+ <!--天气-->
+     <div class="container-fluid" style=" background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%);; height: 40%; font-size: x-large;" >
+     <div class="row">
+  
+      <!--今日天气--> 
+        <div class="col-4 " style="margin-left: 4%;" > 
+            <h2 id="nowcity" ></h2>
+          <p> </p>
+            <h1 id="wea"> </h1>
+            <p id="date" style="font-size: xx-large;"></p>
+            <p id="advise"></p>
+            <p id="shuju" ></p>        
+        </div>
+
+        <!--未来五天-->
+        <div class="col-7 rounded " style="margin-left: 3px;font-size: x-large;">
+            <div class="row"  >
+            <div class="col "  >
+                <div class="row" id="date1" style="width: 120%; font-size: x-large"></div>
+                <br>
+                <div class="row" id="wea1" style="font-size: x-large"></div>
+                <br>
+                <div class="row" id="img1" ><img src="" id="a0" alt=""></div>
+                <br>
+                <div class="row" id="hightem1"></div>
+                <br>
+              <div class="row" id="lowtem1"></div>
+            </div>
+            <div class="col" >
+            <div class="row" id="date2" style="width: 120%; font-size: x-large;"></div>
+            <br>
+                <div class="row" id="wea2" style="font-size: x-large"></div>
+                <br>
+                <div class="row" id="img2" ><img src="" alt="" id="a"></div>
+                <br>
+                <div class="row" id="hightem2"></div>
+                <br>
+              <div class="row" id="lowtem2"></div>
+            </div>
+            <div class="col" >
+              <div class="row" id="date3" style="width: 120%; font-size: x-large;"></div>
+              <br>
+              <div class="row" id="wea3" style="font-size: x-large"></div>
+              <br>
+              <div class="row" id="img3" ><img src="" id="aa" alt=""></div>
+              <br>
+              <div class="row" id="hightem3"></div>
+              <br>
+              <div class="row" id="lowtem3"></div>
+            </div>
+            <div class="col" >
+              <div class="row" id="date4" style="width: 120%; font-size: x-large;"></div>
+              <br>
+                <div class="row" id="wea4" style="font-size: x-large"></div>
+                <br>
+              <div class="row" id="img4" ><img src="" id="aaa" alt=""></div>
+              <br>
+              <div class="row" id="hightem4"></div>
+              <br>
+              <div class="row" id="lowtem4"></div>
+            </div>
+            <div class="col" >
+              <div class="row" id="date5" style="width: 120%; font-size: x-large;"></div>
+              <br>
+              <div class="row" id="wea5"  style="font-size: x-large"></div>
+              <br>
+              <div class="row" id="img5" ><img src="" id="aaaa" alt=""></div>
+              <br>
+              <div class="row" id="hightem5"></div>
+              <br>
+              <div class="row" id="lowtem5"></div>
+            </div>
+        </div>
+        </div>
+     </div>
+     </div>
+ 
+
+  
+     <div class="row"  style="background-color: #F0FFFF;">
+      <div class="col" id="sunrise" style="margin-right: 13%;"></div>
+     <div class="col-2" style="margin-left: 25%;margin-right: 30%;"> <a href="http://www.weather.com.cn/weather15d/101190101.shtml" target="_blank" style="border: solid gainsboro;padding: 0">15天天气预报</a></div>
+     <div class="col" id="sunset" ></div>
+    </div>
+
+
+    <div style="height: 200px; background-color: #CCEEFF;">
+      <iframe src="http://typhoon.weather.com.cn/gis/typhoon_m.shtml" frameborder="0"  scrolling="no"  style="width: 100%;"></iframe>
+    </div>
+
+<!-- 轮播图 -->
+
+<div id="demo" class="carousel slide " data-bs-ride="carousel "  >
+  <!-- 指示符 -->
+ <div class="carousel-indicators">
+   <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+   <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+   <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+ </div>
+ 
+ <!-- 轮播图片 -->
+ <div class="carousel-inner" >
+   <div class="carousel-item active">
+     <img src="https://pic3.zhimg.com/80/v2-0e260f30fe836b0496521578c4c7114c_1440w.jpg?source=1940ef5c" class="d-block" style="width: 100%;">
+   </div>
+   <div class="carousel-item">
+     <img src="https://pic2.zhimg.com/80/v2-d25dc5a392748d8942b51d5185fce57e_1440w.jpg?source=1940ef5c" class="d-block" style="  width:100%;" >
+   </div>
+   <div class="carousel-item">
+     <img src="https://pic1.zhimg.com/80/v2-c4d146d28e89be4a0fa0ccfaf31bd461_1440w.jpg?source=1940ef5c" class="d-block"  style=" width: 100%;"  >
+   </div>
+ </div>
+ 
+ <!-- 左右切换按钮 -->
+ <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" >
+   <span class="carousel-control-prev-icon"></span>
+ </button>
+ <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next" >
+   <span class="carousel-control-next-icon"></span>
+ </button>
+</div>
+
+
+
+     <script>
+ 
+ var button=document.querySelector('button');
+ var urlbase='https://yiketianqi.com/api?unescape=1&version=v1&appid=56849595&appsecret=rmPdVZ9e'
+ var input=document.getElementById('input');
+ var sunrise=document.getElementById('sunrise');
+ var sunset=document.getElementById('sunset');
+ 
+ var nowcity=document.getElementById('nowcity');
+ var wea=document.getElementById('wea');
+ var date=document.getElementById('date');
+ var advise=document.getElementById('advise');
+ var shuju=document.getElementById('shuju');
+ 
+ var date1=document.getElementById('date1');
+ var wea1=document.getElementById('wea1');
+ var img1=document.getElementById('a0');
+ var hightem1=document.getElementById('hightem1');
+ var lowtem1=document.getElementById('lowtem1');
+ 
+ var date2=document.getElementById('date2');
+ var wea2=document.getElementById('wea2');
+ var img2=document.getElementById('a');
+ var hightem2=document.getElementById('hightem2');
+ var lowtem2=document.getElementById('lowtem2');
+ 
+ var date3=document.getElementById('date3');
+ var wea3=document.getElementById('wea3');
+ var img3=document.getElementById('aa');
+ var hightem3=document.getElementById('hightem3');
+ var lowtem3=document.getElementById('lowtem3');
+ 
+ var date4=document.getElementById('date4');
+ var wea4=document.getElementById('wea4');
+ var img4=document.getElementById('aaa');
+ var hightem4=document.getElementById('hightem4');
+ var lowtem4=document.getElementById('lowtem4');
+ 
+ var date5=document.getElementById('date5');
+ var wea5=document.getElementById('wea5');
+ var img5=document.getElementById('aaaa');
+ var hightem5=document.getElementById('hightem5');
+ var lowtem5=document.getElementById('lowtem5');
+ 
+ chaxun();
+ button.addEventListener('click',chaxun);
+
+ function chaxun(){
+      var city=input.value;
+      
+      var url=urlbase+'&city='+city;
+      console.log(url);
+      console.log(city);
+      fetch(url)
+     .then(response=>{return response.json()})
+     .then(json=>{
+       console.log(json);
+        //将数据返回到今天天气 
+        nowcity.textContent=json.city;
+        wea.textContent=json.data[0].tem+'  '+json.data[0].wea;
+        sunrise.textContent='日出在'+ json.data[0].sunrise;
+        sunset.textContent='日落于'+ json.data[0].sunset;
+
+         var img=document.createElement('img');
+          var yu='https://gitee.com/wangjins/weather_api/raw/98c8ae15adc9f25faa7b1b98599bf205d2a9f0ec/%E5%9B%BE%E6%A0%87%E7%B4%A0%E6%9D%90/cherry/yu.png';
+          var qing='https://gitee.com/wangjins/weather_api/raw/98c8ae15adc9f25faa7b1b98599bf205d2a9f0ec/%E5%9B%BE%E6%A0%87%E7%B4%A0%E6%9D%90/cherry/qing.png';
+          var yin='https://gitee.com/wangjins/weather_api/raw/98c8ae15adc9f25faa7b1b98599bf205d2a9f0ec/%E5%9B%BE%E6%A0%87%E7%B4%A0%E6%9D%90/cherry/yin.png';
+          
+          if(json.data[0].wea.indexOf("晴")!=-1){
+              img.src=qing;
+              wea.appendChild(img);
+               } 
+               if(json.data[0].wea.indexOf("多云")!=-1){
+                img.src=yin;
+                wea.appendChild(img);
+            }
+            if(json.data[0].wea.indexOf("雨")!=-1){
+            img.src=yu;
+            wea.appendChild(img);}
+        date.textContent=json.data[0].date;
+        advise.textContent="提醒您："+json.data[0].air_tips;
+        shuju.textContent=json.data[0].win[0]+json.data[0].win_speed+ "  "+"湿度："+json.data[0].humidity+"  压强："+json.data[0].pressure+'hpa';
+
+
+      //未来五天的数据
+      var i=1;
+      date1.textContent=json.data[i].day;
+      wea1.textContent='     '+json.data[i].wea;
+      hightem1.textContent='最高温'+json.data[i].tem1;
+      lowtem1.textContent="最低温"+json.data[i].tem2;
+     
+            
+            if(json.data[i].wea.indexOf("晴")!=-1){
+              a0.src=qing; 
+             }
+             if(json.data[i].wea.indexOf("多云")!=-1){
+                a0.src=yin;
+            }
+            if(json.data[i].wea.indexOf("雨")!=-1){
+            a0.src=yu;}
+            i++;
+        date2.textContent=json.data[i].day;
+      wea2.textContent='  '+json.data[i].wea;
+      hightem2.textContent=json.data[i].tem1;
+      lowtem2.textContent=json.data[i].tem2;
+     
+            
+            if(json.data[i].wea.indexOf("晴")!=-1){
+              a.src=qing; 
+             }
+             if(json.data[i].wea.indexOf("多云")!=-1){
+                a.src=yin;
+            }
+            if(json.data[i].wea.indexOf("雨")!=-1){
+            a.src=yu;}
+      i++;
+        date3.textContent=json.data[i].day;
+      wea3.textContent='  '+json.data[i].wea;
+      hightem3.textContent=json.data[i].tem1;
+      lowtem3.textContent=json.data[i].tem2;
+      
+            
+            if(json.data[i].wea.indexOf("晴")!=-1){
+              aa.src=qing; 
+             }
+             if(json.data[i].wea.indexOf("多云")!=-1){
+                aa.src=yin;
+            }
+            if(json.data[i].wea.indexOf("雨")!=-1){
+            aa.src=yu;}
+            i++;
+      date4.textContent=json.data[i].day;
+      wea4.textContent='  '+json.data[i].wea;
+      hightem4.textContent=''+json.data[i].tem1;
+      lowtem4.textContent=""+json.data[i].tem2;
+      
+            
+            if(json.data[i].wea.indexOf("晴")!=-1){
+              aaa.src=qing; 
+             }
+             if(json.data[i].wea.indexOf("多云")!=-1){
+                aaa.src=yin;
+            }
+            if(json.data[i].wea.indexOf("雨")!=-1){
+            aaa.src=yu;}
+        i++;
+       date5.textContent=json.data[i].day;
+       wea5.textContent='  '+json.data[i].wea;
+       hightem5.textContent=''+json.data[i].tem1;
+      lowtem5.textContent=""+json.data[i].tem2;
+       
+            
+            if(json.data[i].wea.indexOf("晴")!=-1){
+              aaaa.src=qing; 
+             }
+             if(json.data[i].wea.indexOf("多云")!=-1){
+                aaaa.src=yin;
+            }
+            if(json.data[i].wea.indexOf("雨")!=-1){
+            aaaa.src=yu;}
+      } )}
+     </script>
+</body>
+</html>
